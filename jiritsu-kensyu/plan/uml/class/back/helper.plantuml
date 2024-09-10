@@ -1,0 +1,8 @@
+@startuml
+package helper{
+
+    class EmployeeAccountHelper{
+        + convert(employeeAccountForm:EmployeeAccountForm): EmployeeAccount
+    }
+}
+@enduml

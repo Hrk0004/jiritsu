@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jiritsu.jiritsu_kensyu.repository.employee.AdminAccountRepository">
+  <select id="selectByName" resultType="AdminAccount">
+    select 
+    id as adminId,
+    name as adminName,
+    password
+    from admin_account where name= #{AdminName}
+  </select>
+  
+  <insert id="insert" parameterType="com.jiritsu.jiritsu_kensyu.entity.employee.AdminAccount">
+    <selectKey keyProperty="id" resultType="int" order="BEFORE">
+      select nextVal('account_id_seq');
+    </selectKey>
+    insert into admin_account values(default,#{adminName},#{password})
+  </insert>
+</mapper>

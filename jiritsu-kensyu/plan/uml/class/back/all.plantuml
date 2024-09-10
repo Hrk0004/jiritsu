@@ -1,0 +1,61 @@
+@startuml
+title クラス図（全てのパッケージ）
+
+package controller{
+    class ManagementMenuController
+    class AddEmployeeController
+    'class AddAdminController
+    class CheckApplyController
+    
+}
+package entity {
+    
+    package account{
+        class EmployeeAccount
+        class AdminAccount
+    }
+    package tarnsportation{
+        class Transportaion
+        
+    }
+    package apply{
+        class apply_status
+        class payment_details
+        class applys
+    }
+}
+package form{
+    package apply{
+        class CheckApplyForm
+    }
+    package employee{
+        class EmployeeAccountForm
+        class EmployeeAccountValidator
+    }
+}
+package repository{
+    package employee{
+        interface EmployeeRepository
+    }
+    package apply{
+        interface ApplyReposiotory
+    }
+}
+
+package service{
+        package employee{
+            interface EmployeeService
+            class EmployeeServiceImpl
+        }
+        package apply{
+            interface CheckApplyService
+            class CheckApplyServiceImpl
+        }
+    }
+
+package helper{
+    class EmployeeAccountHelper
+    class ApplyHelper
+}
+
+@enduml

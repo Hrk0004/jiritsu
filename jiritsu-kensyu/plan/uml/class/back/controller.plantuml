@@ -1,0 +1,25 @@
+@startuml
+title クラス図(controller)
+
+package controller{
+
+
+    class EmployeeAccountContrroller{
+        - employeevalid:EmployeeAccountValidator
+        + initBinder(binder:WebDataBinder):void
+        + setupForm():EmployeeAccountForm
+        + input(model:Model):String
+        + confirm(empAccForm:employeeAccouontForm,result:BindindResult,model:Model):String
+        + execute(empAccForm:EmployeeAccountForm,redirectAttributes:RedirectAttributes):String
+        + complete(stat:SessionStatus,empAccForm:EmployeeAccountForm):String
+    }
+
+    class ManagementMenuController{
+        + menu():String
+        + login():String
+    }
+}
+
+
+
+@enduml

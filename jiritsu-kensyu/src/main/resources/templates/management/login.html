@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン</title>
+</head>
+<body>
+    <h1>ログイン</h1>
+    <div th:if="${session['SPRING_SECURITY_LAST_EXCEPTION'] != null}" class="error">
+        <span th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"></span>
+    </div>
+    <form th:action="@{/management/auth}" method="post">
+        <table border="0"></table>
+            <tr>
+                <td id="left_column">アカウント名</td>
+                <td id="right_column">
+                    <input type="text" name="username">
+                </td>
+            </tr>
+            <tr>
+                <td id="left_column">パスワード</td>
+                <td id="right_column">
+                    <input type="password" name="password">
+                </td>
+            </tr>
+        </table>
+            <br/>
+    </form>
+</body>
+</html>

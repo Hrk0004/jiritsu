@@ -1,0 +1,23 @@
+@startuml
+title クラス図（service）
+
+package service{
+
+    package employee{
+        interface EmployeeService{
+            +addEmployee(employeeAccount: EmployeeAccount):void
+            +getEmployeeAccounts():List<EmployeeAccount>
+        }
+
+        interface AdminService{
+            +addAdminAccount(adminAccount: AdminAccount):void
+            +getAdminAccounts():List<AdminAccount>
+        } 
+        class AdminServiceImpl implements AdminService{
+            - adminAccountRepository: AdminAccountRepository
+            
+        }
+
+    }
+}
+@enduml

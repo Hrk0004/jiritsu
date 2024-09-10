@@ -1,0 +1,22 @@
+@startuml
+title クラス図(フォーム)
+
+package employee{
+
+    class EmployeeAccountForm{
+        - empName: String 
+        - accountName: String
+        - accountPass: String
+    }
+
+    class EmployeeAccoutnValidator{
+        +supports(clazz: Class<?>): boolean
+        +validate(target: Object, errors: Errors):void
+    }
+
+    class LoginValidator{
+        +supports(clazz: Class<?>): boolean
+        +validate(target: Object , errors: Errors): void
+    }
+}
+@enduml

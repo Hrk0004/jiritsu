@@ -1,0 +1,34 @@
+@startuml
+title Securityクラス図
+
+package security{
+
+    class SecurityConfig{
+        - service: AccountUserDetailsService
+        - encoder: PasswordEncoder
+        + authenticationManager(\n userDetailService: UserDetailsService, \n passwordEncoder: PasswordEncoder):\n AuthenticationManager
+        + webCustomizer(): WebSecurityCustomizer
+        + securityFilterChain(http:HttpSecurity): SecurityFilterChain
+    }
+
+    class EmployeeAccountUserDetails{
+        - account: Account
+        - authority:Collection<GrantedAuthority>
+        + getAuthorities(): Collection<GrantedAuthority>
+        + getPassword(): String
+        + getUsername(): String
+        + isAccountNonExpired(): boolean
+        + isAccountNonLocked(): boolean
+        + isCredentialsNonExpired(): boolean
+        + isEnabled(): boolean
+    }
+
+
+    class EmployeeAccountUserDetailsService{
+        repository: AccountRepository
+        + loadUserByUsername(username: String): UserDetails
+        + getAuthorities(role: String): Collection<GrantedAuthority>
+    }
+}
+
+@enduml

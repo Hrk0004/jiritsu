@@ -1,0 +1,29 @@
+@startuml
+title クラス図(entitiy)
+
+package entitiy{
+
+    package employee{
+
+        class EmployeeAccount{
+            - empId: int
+            - empName: String 
+            - accountName: String 
+            - password: String 
+        }
+
+
+    package AdminAccount{
+        
+        class AdminAccount{
+            - adminId: int
+            - Name: String
+            - password: String
+        }
+    }    
+    }
+    
+
+}
+
+@enduml

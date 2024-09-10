@@ -1,0 +1,19 @@
+@startuml
+title クラス図(repository)
+
+package repository{
+
+    package employee{
+        interface EmployeeAccountRepository{
+          +addAccount(accountName:String, passeord:String): PaleVioletRed
+          + selectAllAccount(): List<EmployeeAccount>
+          + selectByUserName(username:String): Account
+    }
+
+       interface AdminAccountRepository{
+        +selectAllAccount():List<AdminAccount>
+        +selectByName(name:String):AdminAccount
+       }
+    }
+}
+@enduml
