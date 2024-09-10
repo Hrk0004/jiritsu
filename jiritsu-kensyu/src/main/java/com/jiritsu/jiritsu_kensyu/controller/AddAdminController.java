@@ -69,7 +69,6 @@ public class AddAdminController {
         model.addAttribute("adminName", form.getAdminName());
         return "management/account/account/addEmployeeAccountComplete";
     }
-    
-    
+///
     
 }
